@@ -2,9 +2,9 @@
 
 A home services marketplace built with React. Homeowners describe their project, browse vetted local professionals, compare quotes, and hire with confidence.
 
-[![Deploy to GitHub Pages](https://github.com/towfiq-ul/home_service/actions/workflows/deploy.yml/badge.svg)](https://github.com/towfiq-ul/home_service/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/towfiq-ul/home-fix/actions/workflows/deploy.yml/badge.svg)](https://github.com/towfiq-ul/home-fix/actions/workflows/deploy.yml)
 
-> **Live site:** `https://towfiq-ul.github.io/home_service/`
+> **Live site:** `https://towfiq-ul.github.io/home-fix/`
 
 ---
 
@@ -44,7 +44,7 @@ A home services marketplace built with React. Homeowners describe their project,
 ## Project Structure
 
 ```
-home_service/
+home-fix/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml          # GitHub Pages deployment workflow
@@ -87,8 +87,8 @@ home_service/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/home_service.git
-cd home_service
+git clone https://github.com/towfiq-ul/home-fix.git
+cd home-fix
 
 # 2. Install dependencies
 cd frontend
@@ -127,7 +127,7 @@ push to master → install deps → npm run build → upload artifact → deploy
 
 Your site will be live at:
 ```
-https://<your-username>.github.io/home_service/
+https://towfiq-ul.github.io/home-fix/
 ```
 
 > **SPA routing note:** The workflow copies `index.html → 404.html` so React Router handles deep links (`/pros`, `/pros/3`, `/get-quotes`) without GitHub Pages returning a real 404.
