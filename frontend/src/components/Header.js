@@ -31,9 +31,16 @@ const Header = () => {
             <Link to="/pros" className="text-stone-300 hover:text-white text-sm font-medium transition-colors">
               Find Pros
             </Link>
-            <a href="/" className="text-stone-300 hover:text-white text-sm font-medium transition-colors">
+            <Link
+              to="/#how-it-works"
+              onClick={() => {
+                const el = document.getElementById('how-it-works');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-stone-300 hover:text-white text-sm font-medium transition-colors"
+            >
               How It Works
-            </a>
+            </Link>
             <Link to="/pros" className="border border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
               Sign Up as Pro
             </Link>
@@ -60,6 +67,17 @@ const Header = () => {
           <div className="md:hidden border-t border-stone-700 pb-4 pt-2 space-y-2">
             <Link to="/services"   className="block px-3 py-2 text-stone-300 hover:text-white text-sm font-medium" onClick={() => setMenuOpen(false)}>Browse Services</Link>
             <Link to="/pros"       className="block px-3 py-2 text-stone-300 hover:text-white text-sm font-medium" onClick={() => setMenuOpen(false)}>Find Pros</Link>
+            <Link
+              to="/#how-it-works"
+              className="block px-3 py-2 text-stone-300 hover:text-white text-sm font-medium"
+              onClick={() => {
+                setMenuOpen(false);
+                const el = document.getElementById('how-it-works');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              How It Works
+            </Link>
             <Link to="/get-quotes" className="block px-3 py-2 bg-emerald-600 text-white rounded-lg text-sm font-medium text-center mt-2" onClick={() => setMenuOpen(false)}>Get Free Quotes</Link>
           </div>
         )}

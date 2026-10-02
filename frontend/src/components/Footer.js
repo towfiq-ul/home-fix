@@ -20,13 +20,18 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-stone-500 leading-relaxed">
-              Connecting homeowners with trusted local professionals since 2024.
+              Connecting homeowners with trusted local professionals since 2026.
             </p>
             <div className="flex space-x-3 mt-4">
               {['𝕏', 'f', 'in', '▶'].map((icon, i) => (
-                <a key={i} href="/" className="w-8 h-8 bg-stone-700 hover:bg-emerald-600 rounded-full flex items-center justify-center text-xs font-bold text-stone-300 hover:text-white transition-colors">
+                <button
+                  key={i}
+                  type="button"
+                  aria-label="Social link"
+                  className="w-8 h-8 bg-stone-700 hover:bg-emerald-600 rounded-full flex items-center justify-center text-xs font-bold text-stone-300 hover:text-white transition-colors"
+                >
                   {icon}
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -35,8 +40,19 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
-              {['Handyman', 'Plumbing', 'Electrical', 'Painting', 'Cleaning', 'Landscaping'].map(s => (
-                <li key={s}><Link to="/services" className="hover:text-white transition-colors">{s}</Link></li>
+              {[
+                { name: 'Handyman', slug: 'handyman' },
+                { name: 'Plumbing', slug: 'plumbing' },
+                { name: 'Electrical', slug: 'electrical' },
+                { name: 'Painting', slug: 'painting' },
+                { name: 'Cleaning', slug: 'cleaning' },
+                { name: 'Landscaping', slug: 'landscaping' }
+              ].map(s => (
+                <li key={s.slug}>
+                  <Link to={`/pros?category=${s.slug}`} className="hover:text-white transition-colors">
+                    {s.name}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -45,9 +61,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
-              {['About Us', 'How It Works', 'Blog', 'Press', 'Careers', 'Contact'].map(s => (
-                <li key={s}><a href="/" className="hover:text-white transition-colors">{s}</a></li>
-              ))}
+              <li><Link to="/#how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">All Services</Link></li>
+              <li><Link to="/pros" className="hover:text-white transition-colors">Browse Pros</Link></li>
+              <li><Link to="/get-quotes" className="hover:text-white transition-colors">Get Quotes</Link></li>
             </ul>
           </div>
 
@@ -55,22 +72,23 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-sm">
-              {['Help Center', 'Safety', 'Privacy Policy', 'Terms of Service', 'Accessibility'].map(s => (
-                <li key={s}><a href="/" className="hover:text-white transition-colors">{s}</a></li>
-              ))}
+              <li><Link to="/get-quotes" className="hover:text-white transition-colors">Help Center</Link></li>
+              <li><Link to="/services" className="hover:text-white transition-colors">Safety & Standards</Link></li>
+              <li><span className="text-stone-500 cursor-default">Privacy Policy</span></li>
+              <li><span className="text-stone-500 cursor-default">Terms of Service</span></li>
             </ul>
             <div className="mt-6">
-              <p className="text-xs text-stone-500 mb-2">Download the app</p>
+              <p className="text-xs text-stone-500 mb-2">Get started</p>
               <div className="flex space-x-2">
-                <a href="/" className="bg-stone-700 hover:bg-stone-600 text-stone-300 hover:text-white text-xs px-3 py-1.5 rounded-md transition-colors">App Store</a>
-                <a href="/" className="bg-stone-700 hover:bg-stone-600 text-stone-300 hover:text-white text-xs px-3 py-1.5 rounded-md transition-colors">Google Play</a>
+                <Link to="/get-quotes" className="bg-emerald-700 hover:bg-emerald-600 text-white text-xs px-3 py-1.5 rounded-md transition-colors font-medium">Get a Quote</Link>
+                <Link to="/pros" className="bg-stone-700 hover:bg-stone-600 text-stone-300 hover:text-white text-xs px-3 py-1.5 rounded-md transition-colors">Find a Pro</Link>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-stone-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-stone-600">
-          <p>© 2024 HomeFix, Inc. All rights reserved.</p>
+          <p>© 2026 HomeFix, Inc. All rights reserved.</p>
           <p className="mt-2 md:mt-0">Made with ❤️ for homeowners everywhere.</p>
         </div>
       </div>

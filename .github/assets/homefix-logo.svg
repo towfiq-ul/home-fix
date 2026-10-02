@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" fill="none" width="100%" height="100%">
+  <defs>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#047857" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <style>
+    .brand-text-home { fill: #1C1917; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .brand-text-sub { fill: #78716C; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .brand-text-home { fill: #F5F5F4; }
+      .brand-text-sub { fill: #A8A29E; }
+    }
+  </style>
+
+  <!-- Logo Mark Container -->
+  <g filter="url(#shadow)">
+    <rect x="10" y="10" width="80" height="80" rx="20" fill="url(#emeraldGrad)" />
+    <!-- House outline -->
+    <path d="M26 44 L50 24 L74 44 V70 C74 72.2 72.2 74 70 74 H30 C27.8 74 26 72.2 26 70 Z" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Door -->
+    <path d="M43 74 V52 C43 50.3 44.3 49 46 49 H54 C55.7 49 57 50.3 57 52 V74" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Chimney -->
+    <path d="M63 35 V28 H69 V40" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Accent Sparkle -->
+    <circle cx="50" cy="38" r="3.5" fill="#FBBF24" />
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="110" y="60" font-size="44" font-weight="800" letter-spacing="-1">
+    <tspan class="brand-text-home">Home</tspan><tspan fill="#10B981">Fix</tspan>
+  </text>
+  <text x="112" y="80" font-size="12" font-weight="600" letter-spacing="3" class="brand-text-sub">
+    HOME SERVICES MARKETPLACE
+  </text>
+</svg>

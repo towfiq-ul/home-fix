@@ -7,7 +7,11 @@ const Hero = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    navigate('/pros');
+    if (query.trim()) {
+      navigate(`/pros?search=${encodeURIComponent(query.trim())}`);
+    } else {
+      navigate('/pros');
+    }
   };
 
   return (

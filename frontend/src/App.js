@@ -11,7 +11,7 @@ import './index.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1">
@@ -21,6 +21,7 @@ function App() {
             <Route path="/pros/:id"    element={<ProProfilePage />} />
             <Route path="/services"    element={<ServicesPage />} />
             <Route path="/get-quotes"  element={<GetQuotesPage />} />
+            <Route path="*"            element={<HomePage />} />
           </Routes>
         </main>
         <Footer />

@@ -1,20 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import ProCard from '../components/ProCard';
 import { pros, categories } from '../data/mockData';
 
 const ProsListPage = () => {
   const [searchParams] = useSearchParams();
-  const initialCategory = searchParams.get('category') || 'all';
+  const categoryParam = searchParams.get('category') || 'all';
+  const queryParam    = searchParams.get('search') || searchParams.get('q') || '';
 
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [selectedCategory, setSelectedCategory] = useState(categoryParam);
+  const [searchTerm, setSearchTerm]             = useState(queryParam);
   const [sortBy, setSortBy]                     = useState('rating');
   const [maxRate, setMaxRate]                   = useState(200);
   const [topProOnly, setTopProOnly]             = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setSelectedCategory(searchParams.get('category') || 'all');
+    setSearchTerm(searchParams.get('search') || searchParams.get('q') || '');
+  }, [searchParams]);
+
   const filtered = pros
     .filter(p => selectedCategory === 'all' || p.category === selectedCategory)
+    .filter(p => {
+      if (!searchTerm.trim()) return true;
+      const term = searchTerm.toLowerCase();
+      return (
+        p.name.toLowerCase().includes(term) ||
+        p.title.toLowerCase().includes(term) ||
+        p.category.toLowerCase().includes(term) ||
+        p.skills.some(s => s.toLowerCase().includes(term))
+      );
+    })
     .filter(p => p.hourlyRate <= maxRate)
     .filter(p => !topProOnly || p.topPro)
     .sort((a, b) => {

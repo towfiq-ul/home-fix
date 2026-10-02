@@ -1,10 +1,15 @@
-# 🏡 HomeFix
+<div align="center">
+  <img src=".github/assets/homefix-logo.svg" alt="HomeFix Logo" width="280" />
+  <p><strong>A modern home services marketplace built with React.</strong><br>
+  Homeowners describe their project, browse vetted local professionals, compare quotes, and hire with confidence.</p>
 
-A home services marketplace built with React. Homeowners describe their project, browse vetted local professionals, compare quotes, and hire with confidence.
+  <p>
+    <a href="https://github.com/towfiq-ul/home-fix/actions/workflows/deploy.yml"><img src="https://github.com/towfiq-ul/home-fix/actions/workflows/deploy.yml/badge.svg" alt="Deploy to GitHub Pages" /></a>
+    <a href="https://towfiq-ul.github.io/home-fix/"><img src="https://img.shields.io/badge/Live_Site-towfiq--ul.github.io%2Fhome--fix-059669?style=flat&logo=githubpages&logoColor=white" alt="Live Site" /></a>
+  </p>
 
-[![Deploy to GitHub Pages](https://github.com/towfiq-ul/home-fix/actions/workflows/deploy.yml/badge.svg)](https://github.com/towfiq-ul/home-fix/actions/workflows/deploy.yml)
-
-> **Live site:** `https://towfiq-ul.github.io/home-fix/`
+  <p>👉 <strong><a href="https://towfiq-ul.github.io/home-fix/">Visit Live Application</a></strong></p>
+</div>
 
 ---
 

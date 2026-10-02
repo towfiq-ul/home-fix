@@ -41,7 +41,7 @@ const HomePage = () => {
             {categories.map(cat => (
               <button
                 key={cat.id}
-                onClick={() => navigate('/services')}
+                onClick={() => navigate(`/pros?category=${cat.slug}`)}
                 className="bg-white hover:bg-emerald-50 border border-stone-200 hover:border-emerald-400 rounded-xl p-4 text-center transition-all duration-200 group"
               >
                 <div className="text-3xl mb-2">{cat.icon}</div>
@@ -54,7 +54,7 @@ const HomePage = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 bg-white">
+      <section id="how-it-works" className="py-16 bg-white scroll-mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-stone-900">How HomeFix Works</h2>
